@@ -3,7 +3,7 @@
     margin:0;                  /* Remove margens externas padrão */
     padding:0;                 /* Remove preenchimentos internos padrão */ 
     box-sizing:border-box;     /* Inclui bordas e preenchimento no cálculo da largura/altura */
-    font-family: Arial, Helvetica, sans-serif;      /* Define a fonte principal usada no site */
+    font-family: 'Titillium Web', sans-serif;      /* Define a fonte principal usada no site */
 }
 
 .bng-navbar-menu { 
@@ -40,7 +40,7 @@
     height: 100vh;                  /* Altura total da janela */ 
     background-color: #343a40;    /* Fundo escuro */ 
     color: white;                 /* Texto branco */ 
-    padding: 100px 20px 20px;       /* Espaçamento interno */ 
+    padding: 100px 10px 10px;       /* Espaçamento interno */ 
     position: fixed;                /* Fixa à esquerda do ecrã */ 
     left: 0; 
     top: 0; 
