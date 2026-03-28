@@ -8,7 +8,8 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="../../assets/img/gym125.png" type="image/png">
 
-    <!-- folha de estilos CSS-->
+    <!-- Bootstrap CSS & custom CSS --> 
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/css/admin.css">
 
     <!-- Google Fonts --> 
@@ -24,73 +25,119 @@
 <body>
 
 <!-- Navbar --> 
-<header class="bng-navbar-menu"> 
-    <div> 
-        <!-- Logo e Nome --> 
-        <a href="../../index.html"> 
-            <img src="../../assets/img/gym125_white.png" alt="Logo do ISEP Ginásio" height="50"> 
+<header class="container-fluid bg-dark text-white"> 
+    <div class="row align-items-center">
+        <div class="col-6 d-flex align-items-center p-3">
+            <!-- Logo e Nome --> 
+        <a href="index.html"> 
+            <img src="../../assets/img/gym125_white.png" alt="Logo do ISEP Ginásio" height="50" class="me-3"> 
         </a> 
-        <h3>ISEP Ginásio</h3> 
-    </div> 
-    <div> 
-        <button>Utilizador</button> 
-    </div> 
+        <h3 class="mb-0">ISEP Ginásio</h3>
+        </div> 
+
+        <div class="col-6 text-end p-3"> 
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" 
+                aria-expanded="false"> 
+                    <i class="fa-regular fa-user me-2"></i> Utilizador 
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end"> 
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Alterar password</a></li> 
+                    <li><hr class="dropdown-divider"></li> 
+                    <li><a class="dropdown-item" href="login_form.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li> 
+                </ul>
+            </div>
+        </div> 
+    </div>
 </header> 
- 
-<!-- Sidebar --> 
-<aside class="sidebar"> 
-    <h4>Menu</h4> 
-    <nav> 
-        <a href="../clientes/lista.html"><i class="fas fa-users"></i> &ensp; Clientes</a> 
-        <a href="../agendamento/agendamento.html"><i class="fas fa-calendar-alt"></i> &ensp; Agendamento de Treinos</a> 
-        <a href="../planos/planos_treino.html"><i class="fas fa-dumbbell"></i> &ensp; Planos de Treino</a> 
-        <a href="../equipamentos/equipamentos.html"><i class="fas fa-cogs"></i> &ensp; Equipamentos</a> 
-        <a href="../produtos-servicos/produtos_servicos.html"><i class="fas fa-box-open"></i> &ensp; Produtos e Serviços</a> 
-    </nav> 
-</aside>  
- 
- 
-<!-- Conteúdo Principal --> 
-<div class="content"> 
-    <div class="actions-top"> 
-        <h2><strong><i class="fa-solid fa-address-book"></i> Listagem de Clientes </strong></h2> 
-        <a href="novo.html"><i class="fa-solid fa-plus me-2"></i> Novo cliente</a> 
+
+
+<div class="container-fluid"> 
+    <div class="row"> 
+
+        <!-- Sidebar --> 
+        <aside class="col-md-3 col-lg-2 bg-secondary text-white p-3 min-vh-100"> 
+            <h4>Menu</h4> 
+            <nav> 
+                <a href="lista.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-users me-2"></i>Clientes
+                </a> 
+                <a href="../agendamento/agendamento.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-calendar-alt me-2"></i>Agendamento de treinos
+                </a> 
+                <a href="../planos/planos_treino.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-dumbbell me-2"></i>Planos de Treino
+                </a> 
+                <a href="../equipamentos/equipamentos.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-cogs me-2"></i>Equipamentos
+                </a> 
+                <a href="../produtos-servicos/produtos_servicos.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-box-open me-2"></i>Produtos e Serviços
+                </a> 
+            </nav> 
+        </aside>
+
+        <!-- Conteúdo Principal --> 
+        <div class="col-md-9 col-lg-10 p-4"> 
+            <div class="d-flex justify-content-between align-items-center mb-3"> 
+                <h2 class="mb-0">
+                    <i class="fa-solid fa-address-book me-2"></i> 
+                    <strong>Listagem de Clientes</strong> 
+                </h2>
+                <a href="novo.html" class="btn btn-success">
+                    <i class="fa-solid fa-plus me-2"></i> Novo cliente
+                </a> 
+            </div>
+
+            <hr> 
+            <p class="text-muted">Não existem clientes registados.</p> 
+
+            <div class="table-responsive">   
+                <table class="table table-bordered table-striped align-middle"> 
+                    <thead class="table-dark"> 
+                        <tr> 
+                            <th>Nome</th> 
+                            <th>Sexo</th> 
+                            <th>Data nascimento</th> 
+                            <th>Email</th> 
+                            <th>Telefone</th> 
+                            <th>Sistema de Saúde</th> 
+                            <th class="text-center">Ações</th>
+                        </tr> 
+                    </thead> 
+                    <tbody> 
+                        <tr> 
+                            <td>[Nome Cliente]</td> 
+                            <td>[Sexo]</td> 
+                            <td>[data_Nasc]</td> 
+                            <td>[email]</td> 
+                            <td>[Telefone]</td> 
+                            <td>[sistema_saude]</td> 
+                            <td class="text-center"> 
+                                <a href="detalhes.html" class="btn btn-sm btn-outline-primary me-1">
+                                    <i class="fa-solid fa-eye me-2" class="btn btn-sm btn-outline-primary me-1"></i>
+                                </a> 
+                                <a href="editar.html" class="btn btn-sm btn-outline-warning me-1">
+                                    <i class="fa-regular fa-pen-to-square me-2"></i>
+                                </a>  
+                                <a href="apagar.html" class="btn btn-sm btn-outline-danger">
+                                    <i class="fa-solid fa-trash-can me-2"></i>
+                                </a> 
+                            </td> 
+                        </tr> 
+                    </tbody> 
+                </table> 
+            </div>
+        </div>
+
     </div> 
-    <br> 
-    <hr> 
-    <p>Não existem clientes registados.</p> 
-    <table> 
-        <thead> 
-            <tr> 
-                <th>Nome</th> 
-                <th>Sexo</th> 
-                <th>Data nascimento</th> 
-                <th>Email</th> 
-                <th>Telefone</th> 
-                <th>Sistema de Saúde</th> 
-                <th></th> 
-            </tr> 
-        </thead> 
-        <tbody> 
-            <tr> 
-                <td>[Nome Cliente]</td> 
-                <td>[Sexo]</td> 
-                <td>[data_Nasc]</td> 
-                <td>[email]</td> 
-                <td>[Telefone]</td> 
-                <td>[sistema_saude]</td> 
-                <td> 
-                    <a href="detalhes.html"><i class="fa-solid fa-eye me-2"></i> Consultar</a> 
-                    <span>|</span> 
-                    <a href="editar.html"><i class="fa-regular fa-pen-to-square me-2"></i> Editar</a> 
-                    <span>|</span> 
-                    <a href="apagar.html"><i class="fa-solid fa-trash-can me-2"></i> Eliminar</a> 
-                </td> 
-            </tr> 
-        </tbody> 
-    </table> 
 </div> 
-    
+ 
+ 
+ 
+<!-- Bootstrap JS and custom JS --> 
+<script src="../../assets/bootstrap/bootstrap.bundle.min.js"></script> 
+
 </body>
 
 
