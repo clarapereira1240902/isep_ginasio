@@ -8,8 +8,9 @@
     <!-- favicon -->
     <link rel="shortcut icon" href="../../assets/img/gym125.png" type="image/png">
 
-    <!-- folha de estilos CSS-->
-    <link rel="stylesheet" href="../../assets/css/admin.css">
+    <!-- Bootstrap CSS & custom CSS --> 
+    <link rel="stylesheet" href="../../assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/app.css"> 
 
     <!-- Google Fonts --> 
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -25,40 +26,69 @@
 <body>
 
 <!-- Navbar --> 
-<header class="bng-navbar-menu"> 
-    <div> 
-        <!-- Logo e Nome --> 
-        <a href="../../index.html"> 
-            <img src="../../assets/img/gym125_white.png" alt="Logo do ISEP Ginásio" height="50"> 
+<header class="container-fluid bg-dark text-white"> 
+    <div class="row align-items-center">
+        <div class="col-6 d-flex align-items-center p-3">
+            <!-- Logo e Nome --> 
+        <a href="index.html"> 
+            <img src="../../assets/img/gym125_white.png" alt="Logo do ISEP Ginásio" height="50" class="me-3"> 
         </a> 
-        <h3>ISEP Ginásio</h3> 
-    </div> 
-    <div> 
-        <button>Utilizador</button> 
-    </div> 
-</header> 
+        <h3 class="mb-0">ISEP Ginásio</h3>
+        </div> 
+
+        <div class="col-6 text-end p-3"> 
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" 
+                aria-expanded="false"> 
+                    <i class="fa-regular fa-user me-2"></i> Utilizador 
+                </button> 
+                <ul class="dropdown-menu dropdown-menu-end"> 
+                    <li><a class="dropdown-item" href="#"><i class="fa-solid fa-key me-2"></i>Alterar password</a></li> 
+                    <li><hr class="dropdown-divider"></li> 
+                    <li><a class="dropdown-item" href="login_form.html"><i class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li> 
+                </ul>
+            </div>
+        </div> 
+    </div>
+</header>
  
-<!-- Sidebar --> 
-<aside class="sidebar"> 
-    <h4>Menu</h4> 
-    <nav> 
-        <a href="../clientes/lista.html"><i class="fas fa-users"></i> &ensp; Clientes</a> 
-        <a href="../agendamento/agendamento.html"><i class="fas fa-calendar-alt"></i> &ensp; Agendamento de Treinos</a> 
-        <a href="../planos/planos_treino.html"><i class="fas fa-dumbbell"></i> &ensp; Planos de Treino</a> 
-        <a href="../equipamentos/equipamentos.html"><i class="fas fa-cogs"></i> &ensp; Equipamentos</a> 
-        <a href="../produtos-servicos/produtos_servicos.html"><i class="fas fa-box-open"></i> &ensp; Produtos e Serviços</a> 
-    </nav> 
-</aside>  
+<div class="container-fluid"> 
+    <div class="row"> 
+
+        <!-- Sidebar --> 
+        <aside class="col-md-3 col-lg-2 bg-secondary text-white p-3 min-vh-100"> 
+            <h4>Menu</h4> 
+            <nav> 
+                <a href="../clientes/lista.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-users me-2"></i>Clientes
+                </a> 
+                <a href="../agendamento/agendamento.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-calendar-alt me-2"></i>Agendamento de treinos
+                </a> 
+                <a href="../planos/planos_treino.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-dumbbell me-2"></i>Planos de Treino
+                </a> 
+                <a href="../equipamentos/equipamentos.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-cogs me-2"></i>Equipamentos
+                </a> 
+                <a href="../produtos-servicos/produtos_servicos.html" class="nav-link text-white px-0 mb-2 d-block">
+                    <i class="fas fa-box-open me-2"></i>Produtos e Serviços
+                </a> 
+            </nav> 
+        </aside> 
+        
+        <!-- Conteúdo Principal --> 
+        <main class="col-md-9 col-lg-10 p-4"> 
+            <section> 
+                <h2>Planos de Treino</h2> 
+                <p>Podes escolher o plano ideal para ti.</p> 
+            </section> 
+        </main> 
+
+    </div>
+</div>
  
  
-<!-- Conteúdo Principal --> 
-<main class="content"> 
-    <section> 
-        <h2>Planos de Treino</h2> 
-        <p>Podes escolher o plano ideal para ti.</p> 
-    </section> 
-</main> 
-    
 </body>
 
 
