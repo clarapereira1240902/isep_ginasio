@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../../config/config.php';
 
 // Inicia sessão se ainda não estiver iniciada
 function start_session()
@@ -15,18 +16,18 @@ function check_session()
 }
 
 // Redireciona se não estiver logado
-function redirect_if_not_logged($redirect_to = '../public/login.php')
+function redirect_if_not_logged($redirect_to = '/public/login.php')
 {
     start_session();
 
     if (!check_session()) {
-        header("Location: $redirect_to");
+        header("Location: " . BASE_URL . $redirect_to); 
         exit;
     }
 }
 
 // Logout seguro
-function logout_and_redirect($redirect_to = '../public/login.php')
+function logout_and_redirect($redirect_to = '/public/login.php')
 {
     start_session();
 
@@ -42,6 +43,6 @@ function logout_and_redirect($redirect_to = '../public/login.php')
         );
     }
 
-    header("Location: $redirect_to");
+    header("Location: " . BASE_URL . $redirect_to);
     exit;
 }
